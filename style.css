@@ -1,0 +1,361 @@
+:root {
+  --color-bg: #ffffff;
+  --color-bg-alt: #f6f7f9;
+  --color-text: #2b2d33;
+  --color-text-muted: #6b7280;
+  --color-accent: #2f5d9f;
+  --color-border: #e5e7eb;
+  --font-sans: 'Source Sans 3', sans-serif;
+  --font-serif: 'Source Serif 4', serif;
+  --max-width: 860px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  color: var(--color-text);
+  background: var(--color-bg);
+  line-height: 1.65;
+}
+
+/* Navbar */
+.navbar {
+  position: sticky;
+  top: 0;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid var(--color-border);
+  z-index: 100;
+}
+
+.nav-content {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.9rem 1.5rem;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.nav-logo {
+  font-family: var(--font-serif);
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: var(--color-text);
+  text-decoration: none;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+}
+
+.nav-links a {
+  color: var(--color-text-muted);
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: color 0.15s ease;
+}
+
+.nav-links a:hover {
+  color: var(--color-accent);
+}
+
+/* Hero */
+.hero {
+  padding: 3.5rem 1.5rem 2.5rem;
+  background: var(--color-bg-alt);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.hero-content {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+  flex-wrap: wrap;
+}
+
+.hero-photo {
+  flex-shrink: 0;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
+}
+
+.hero-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.photo-placeholder {
+  display: none;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-accent);
+  color: #fff;
+  font-family: var(--font-serif);
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+.hero-text h1 {
+  font-family: var(--font-serif);
+  font-size: 2.4rem;
+  margin: 0 0 0.4rem;
+}
+
+.hero-role {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--color-accent);
+  margin: 0 0 0.6rem;
+}
+
+.hero-affiliation {
+  color: var(--color-text-muted);
+  margin: 0 0 0.5rem;
+}
+
+.hero-location {
+  margin: 0 0 0.9rem;
+  color: var(--color-text-muted);
+}
+
+.hero-links {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.hero-links a {
+  color: var(--color-accent);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  border: 1px solid var(--color-accent);
+  padding: 0.35rem 0.9rem;
+  border-radius: 999px;
+  transition: all 0.15s ease;
+}
+
+.hero-links a:hover {
+  background: var(--color-accent);
+  color: #fff;
+}
+
+/* Sections */
+main {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.section {
+  padding: 2.5rem 0;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.section:last-child {
+  border-bottom: none;
+}
+
+.section h2 {
+  font-family: var(--font-serif);
+  font-size: 1.6rem;
+  margin: 0 0 1.2rem;
+  color: var(--color-text);
+}
+
+.section p {
+  margin: 0 0 1rem;
+}
+
+/* Timeline (Education / Experience) */
+.timeline-item {
+  display: grid;
+  grid-template-columns: 160px 1fr;
+  gap: 1.5rem;
+  margin-bottom: 1.6rem;
+}
+
+.timeline-date {
+  font-weight: 600;
+  color: var(--color-accent);
+  font-size: 0.9rem;
+  white-space: nowrap;
+}
+
+.timeline-content h3 {
+  margin: 0 0 0.2rem;
+  font-size: 1.05rem;
+}
+
+.timeline-content .org {
+  font-weight: 600;
+  color: var(--color-text-muted);
+  margin: 0 0 0.4rem;
+}
+
+.timeline-content p {
+  margin: 0;
+  font-size: 0.96rem;
+}
+
+.timeline-content p.org {
+  font-size: 0.96rem;
+}
+
+/* Publications */
+.pub-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+}
+
+.pub-item {
+  padding: 1rem 1.2rem;
+  background: var(--color-bg-alt);
+  border-radius: 8px;
+  border: 1px solid var(--color-border);
+}
+
+.pub-item h3 {
+  margin: 0 0 0.4rem;
+  font-size: 1.02rem;
+  font-family: var(--font-serif);
+}
+
+.pub-authors {
+  margin: 0 0 0.3rem;
+  font-size: 0.92rem;
+}
+
+.pub-venue {
+  margin: 0;
+  font-size: 0.88rem;
+  color: var(--color-text-muted);
+  font-style: italic;
+}
+
+/* Projects */
+.project-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+}
+
+.project-item h3 {
+  margin: 0 0 0.4rem;
+  font-size: 1.05rem;
+}
+
+.project-item p {
+  margin: 0;
+  font-size: 0.96rem;
+}
+
+/* Awards */
+.awards-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.awards-list li {
+  padding: 0.6rem 0;
+  border-bottom: 1px dashed var(--color-border);
+  font-size: 0.96rem;
+}
+
+.awards-list li:last-child {
+  border-bottom: none;
+}
+
+.award-year {
+  display: inline-block;
+  min-width: 3.2rem;
+  font-weight: 700;
+  color: var(--color-accent);
+}
+
+/* Skills */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.2rem;
+}
+
+.skill-category h3 {
+  margin: 0 0 0.3rem;
+  font-size: 1rem;
+  color: var(--color-accent);
+}
+
+.skill-category p {
+  margin: 0;
+  font-size: 0.92rem;
+  color: var(--color-text-muted);
+}
+
+/* Footer */
+.footer {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 2.5rem 1.5rem 3rem;
+  text-align: center;
+  color: var(--color-text-muted);
+}
+
+.footer h2 {
+  font-family: var(--font-serif);
+  color: var(--color-text);
+  font-size: 1.4rem;
+  margin-bottom: 0.8rem;
+}
+
+.footer p {
+  margin: 0.2rem 0;
+}
+
+.footer a {
+  color: var(--color-accent);
+  text-decoration: none;
+}
+
+.footer-note {
+  margin-top: 1.2rem;
+  font-size: 0.85rem;
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  .hero-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-links {
+    justify-content: center;
+  }
+
+  .timeline-item {
+    grid-template-columns: 1fr;
+    gap: 0.3rem;
+  }
+}
