@@ -78,8 +78,11 @@ main { max-width: var(--max-width); padding: 0 28px; margin: auto; }
 .section-heading .eyebrow { margin-bottom: 7px; }
 .section h2 { font: 600 clamp(27px, 3vw, 33px)/1.2 var(--font-serif); letter-spacing: -.025em; margin: 0; }
 .section > p { max-width: 790px; margin-bottom: 16px; }
-#about > p:first-of-type { font-size: 20px; line-height: 1.65; }
-#about > p:not(:first-of-type) { color: var(--color-text-muted); }
+#about > p { font-size: 17px; line-height: 1.7; color: var(--color-text-muted); }
+#about > p:first-of-type::before { content: '“'; }
+#about > p:first-of-type::after { content: '”'; }
+#about > p:first-of-type::before,
+#about > p:first-of-type::after { font-family: var(--font-serif); font-size: 1.5em; line-height: 0; color: var(--color-accent); vertical-align: -.12em; }
 /* Education and competition timelines. */
 .timeline-item { display: grid; grid-template-columns: 155px minmax(0, 1fr); gap: 30px; margin-bottom: 30px; }
 .timeline-item:last-child { margin-bottom: 0; }
