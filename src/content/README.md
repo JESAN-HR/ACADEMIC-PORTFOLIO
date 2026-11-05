@@ -8,6 +8,8 @@ Your content is now organized into separate files. Each file reads like a form: 
 | --- | --- |
 | Name, photo, introduction, biography | `profile.js` |
 | Add a degree or school | `education.js` |
+| Add an RA role, internship, job or teaching appointment | `experience.js` |
+| Add courses, bootcamps or workshops attended | `training.js` |
 | Add an award or scholarship | `achievements.js` |
 | Add a project | `projects.js` |
 | Add a research paper | `publications.js` |
@@ -100,7 +102,7 @@ The preview address is `http://127.0.0.1:4173`. Rebuild after editing and refres
 
 ## Publications and ongoing research
 
-Author names are separate objects, in the exact order credited by the paper. Set `isMe: true` for your name. Set `authorsVerified: true` only after filling the complete verified list. The UnderWaterYOLO entry retains its supplied acceptance status and contribution until official metadata is available. A DOI field takes the identifier, not the full URL.
+Author names are separate objects, in the exact order credited by the paper. Set `isMe: true` for your name. Set `authorsVerified: true` only after filling the complete verified list. The UnderWaterYOLO author list is transcribed from your supplied title-page screenshot. Its status label is omitted; verify the final proceedings metadata before assigning a publication status or DOI. The current paper link intentionally opens the Google Scholar homepage until you replace it. A DOI field takes the identifier, not the full URL.
 
 Use `researchProjects.js` for unfinished research. Keep it separate from accepted or published papers. The provisional investigation remains hidden. Do not turn planned participation into an award.
 
@@ -133,3 +135,21 @@ Add each real paper in `publications.js` with its actual authors and status. The
 ## Download CV button
 
 Your CV belongs at **cv/JESAN.pdf** in the project root. Overwrite that file with your latest PDF and rebuild. The build checks that it is a PDF, includes it in `dist/cv/JESAN.pdf`, and enables Download CV beside View publications. It works with GitHub Pages repository paths. If the file is missing, a disabled button and availability note appear instead of a broken link. No duplicate CV link in `socialLinks.js` is needed. The `cvUrl` field in `profile.js` is the source for this button.
+
+## Experience versus training
+
+`experience.js` is for actual research assistantships, internships, employment, and teaching appointments. The section appears **after Current Research and before Education**, including its navigation link, as soon as you add a visible entry. It stays hidden when empty, so the public site does not show empty career claims.
+
+Copy the commented template into the list. Fill in your exact title, organization, dates, and responsibilities. Optional fields include location, supervisor, contribution bullets (`highlights`), organization URL, and a proof link. Set `visible` to `true`, then rebuild. Do not describe planned roles as appointments or add invented duties/results.
+
+`training.js` is for your participation as a learner. Your Advanced ML & DL Bootcamp entry is labeled Student Participant, with SM Shaqib as instructor, based on your statement. Your supplied attendance dates are Sep 2024 – May 2025. The medical-data-analysis training at Health Informatics Research Lab, DIU is listed as Fall 2026 and ongoing. No completion certificate or completed outcome is assumed for the ongoing training. Add a certificate URL only if you have one. Training appears near Skills, separately from professional Experience.
+
+`experience.js` now contains two hidden XX examples with `20XX – 20XX` dates. Replace all placeholder text with your real details and set `visible: true` when ready. Copy either complete object to add a third, fourth, or any further role; use a unique `id` and adjust `displayOrder`.
+
+## Editorial card fields
+
+Project cards can use `subtitle`, `status`, `tone`, and `icon` in addition to the existing fields. Available tones are `blue`, `sage`, `mustard`, and `lavender`; icons are `phone`, `code`, `desktop`, and `sparkle`. If omitted, colors cycle automatically and a code icon is used. Add a `fullDescription` or `highlights` to enable the expandable Project notes row.
+
+Research projects may include `field` (for example, Medical AI · Computer Vision), displayed beneath the illustrative diagram. The diagram is decorative, not experimental data. Award `year` and `category` now populate the year column and small category heading automatically. Fonts remain Source Serif 4 and Source Sans 3.
+
+The wide content layout is controlled by `--section-width`; the narrower hero is controlled by `--max-width`. Both are near the style definitions in `style.css`.

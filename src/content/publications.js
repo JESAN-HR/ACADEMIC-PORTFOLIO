@@ -6,16 +6,23 @@ export default [
   {
     "id": "underwateryolo",
     "title": "UnderWaterYOLO: Advancing Multi-Class Marine Species Detection with YOLO Variants",
-    "authors": [],
-    "authorsVerified": false,
+    "authors": [
+      { "name": "Minhajul Islam Rana Khan", "isMe": false },
+      { "name": "SM Shaqib", "isMe": false },
+      { "name": "Mir Siam", "isMe": false },
+      { "name": "MD. Habibur Rahman Jesan", "isMe": true },
+      { "name": "Sharun Akter Khushbu", "isMe": false },
+      { "name": "Mr. Abdus Sattar", "isMe": false }
+    ],
+    "authorsVerified": true,
     "contribution": "Co-author (fourth author)",
     "venue": "16th International Conference on Computing, Communication and Networking Technologies (ICCCNT)",
     "year": 2025,
     "type": "Conference",
-    "status": "Accepted",
+    "status": "",
     "domain": "Computer Vision",
     "doi": "",
-    "paperUrl": "",
+    "paperUrl": "https://scholar.google.com/",
     "pdfUrl": "",
     "codeUrl": "",
     "datasetUrl": "",
@@ -27,7 +34,7 @@ export default [
       "Deep Learning",
       "Object Detection"
     ],
-    "verificationNotes": "Acceptance and fourth-author contribution supplied by Jesan's prompt/CV. Verify full ordered author list, DOI, proceedings status, and official publication links before adding them. Do not infer publication from acceptance.",
+    "verificationNotes": "Author names and row-wise order transcribed from the paper title-page screenshot supplied by Jesan. Venue and year come from the supplied profile. Status label omitted at the owner's request; final proceedings publication and DOI remain unverified. Google Scholar homepage is an owner-requested temporary paper link, not a paper-specific source.",
     "displayOrder": 1,
     "visible": true
   }

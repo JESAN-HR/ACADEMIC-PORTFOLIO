@@ -11,8 +11,10 @@ import achievements from './achievements.js';
 import skills from './skills.js';
 import competitions from './competitions.js';
 import sourceNotes from './sourceNotes.js';
+import experience from './experience.js';
+import training from './training.js';
 
 export default {
   profile, socialLinks, education, researchInterests, researchProjects,
-  publications, projects, achievements, skills, competitions, sourceNotes,
+  publications, projects, achievements, skills, competitions, sourceNotes, experience, training,
 };

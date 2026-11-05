@@ -5,11 +5,12 @@
 export default [
   {
     "id": "retinal-thesis",
+    "field": "Medical AI · Computer Vision",
     "title": "Quality- and Shift-Aware Selective Retinal Disease Classification Across Bangladeshi Clinical Datasets",
     "dates": "2026 – 2027",
     "status": "Undergraduate thesis · Research in progress",
     "supervisor": "Tanzina Afroz Rimi, Daffodil International University",
-    "description": "An ongoing study of retinal fundus image classification, image quality, and prediction reliability under distribution shift. The research is being developed to examine how models generalize across clinical datasets and identify unreliable predictions.",
+    "description": "An undergraduate investigation into how image quality and dataset shift affect retinal disease classification, and when a model should defer an unreliable prediction. The study is being developed; experiments and results are not yet complete.",
     "questions": [
       "How does image quality affect prediction reliability?",
       "How well do models generalize across datasets?",

@@ -5,9 +5,13 @@
 export default [
   {
     "id": "academicx",
-    "title": "Academicx TSK — Smart Academic Task Manager",
+    "title": "Academicx TSK",
+    "subtitle": "Smart Academic Task Manager",
+    "tone": "blue",
+    "icon": "phone",
+    "status": "Published on Google Play",
     "category": "Android Application",
-    "shortDescription": "A task-management Android application for students to organize academic tasks and schedules. Published on Google Play Store.",
+    "shortDescription": "A little more order for student life. An Android application for organizing academic tasks and schedules.",
     "technologies": [
       "Kotlin",
       "Android",
@@ -23,8 +27,10 @@ export default [
   {
     "id": "examinations",
     "title": "Online Examination Management System",
-    "category": "Academic Project",
-    "shortDescription": "A full-stack academic project for managing online examinations.",
+    "category": "Full-stack development",
+    "tone": "sage",
+    "icon": "code",
+    "shortDescription": "A coursework system for creating, administering, and managing online examinations.",
     "technologies": [
       "PHP",
       "MySQL",
@@ -44,7 +50,10 @@ export default [
     "id": "payroll",
     "title": "Employee Payroll Management System",
     "category": "Desktop Application",
-    "shortDescription": "A desktop employee payroll management application using an MVC design pattern.",
+    "tone": "mustard",
+    "icon": "desktop",
+    "fullDescription": "A coursework project applying object-oriented programming and the Model–View–Controller design pattern to employee payroll management.",
+    "shortDescription": "A Java desktop application exploring payroll management through an MVC architecture.",
     "technologies": [
       "Java",
       "Object-Oriented Programming",
@@ -57,9 +66,14 @@ export default [
   },
   {
     "id": "mental-health-agent",
-    "title": "MAYA AI — Mental Health Assistant",
+    "title": "MAYA AI",
+    "subtitle": "Mental Health Assistant",
+    "tone": "lavender",
+    "icon": "sparkle",
+    "status": "5th place · Agent X 2025",
+    "fullDescription": "A competition project, not a clinically validated medical tool. The project documentation describes a mental-health-focused chat interface with Firebase authentication.",
     "category": "AI Competition Project",
-    "shortDescription": "A Flutter chatbot exploring mental-health support through Gemini-powered conversations, developed for Agent X: The AI Challenge, 2025. Placed 5th; a competition project, not a clinically validated medical tool.",
+    "shortDescription": "A Flutter chatbot exploring mental-health support through Gemini-powered conversations, developed for Agent X: The AI Challenge.",
     "technologies": [
       "Flutter",
       "Dart",
