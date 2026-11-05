@@ -13,7 +13,7 @@ test('personal content, hidden research, and internal links', () => {
   assert.match(html, /MAYA AI/);
   assert.match(html, /Victory Day Quiz/);
   assert.match(html, /Rank 67/);
-  assert.doesNotMatch(html, /SM Shaqib|Boise State|5,000|verificationNotes|Provisional investigation/);
+  assert.doesNotMatch(html, /Boise State|5,000|verificationNotes|Provisional investigation/);
   assert.doesNotMatch(html, /href=""/);
   const ids = new Set([...html.matchAll(/\bid="([^"]+)"/g)].map(m => m[1]));
   for (const match of html.matchAll(/href="#([^"]+)"/g)) assert.ok(ids.has(match[1]), match[1]);
@@ -59,7 +59,7 @@ test('education and achievements can be added, ordered and hidden', () => {
 });
 
 test('copy-and-fill templates work in every collection', () => {
-  for (const key of ['education', 'achievements', 'projects', 'publications', 'researchProjects', 'researchInterests', 'skills', 'competitions', 'socialLinks']) {
+  for (const key of ['education', 'achievements', 'projects', 'publications', 'researchProjects', 'researchInterests', 'skills', 'competitions', 'socialLinks', 'experience', 'training']) {
     const source = readFileSync(new URL(`../src/content/${key}.js`, import.meta.url), 'utf8');
     const comment = source.slice(source.indexOf('/* COPY THIS ENTRY'));
     const template = JSON.parse(comment.slice(comment.indexOf('{'), comment.lastIndexOf('}') + 1));
@@ -103,4 +103,25 @@ test('multiple papers render before current research and education', () => {
   assert.equal((html.match(/class="pub-item"/g) || []).length, 4);
   assert.ok(html.indexOf('<section id="publications"') < html.indexOf('<section id="current-research"'));
   assert.ok(html.indexOf('<section id="education"') < html.indexOf('<section id="projects"'));
+});
+
+test('experience visibility is configurable; training stays separate', () => {
+  const data = structuredClone(seed);
+  assert.match(render(data), /XX Position — Example 1/);
+  assert.match(render(data), /XX Position — Example 2/);
+  data.experience.forEach(item => { item.visible = false; });
+  const initial = render(data);
+  assert.doesNotMatch(initial, /id="experience"|href="#experience"/);
+  assert.match(initial, /Student Participant — Advanced ML &amp; DL Bootcamp/);
+  assert.match(initial, /Instructor: SM Shaqib/);
+  assert.doesNotMatch(initial, /Trainer, Advanced|Trained more than 30|Research Assistant/);
+  data.experience.push({ id: 'test-ra', title: 'Research Assistant', organization: 'Test Lab', dates: 'Example dates', description: 'Example duties', highlights: ['Example contribution'], visible: true });
+  const populated = render(data);
+  assert.match(populated, /href="#experience"/);
+  assert.ok(populated.indexOf('<section id="current-research"') < populated.indexOf('<section id="experience"'));
+  assert.ok(populated.indexOf('<section id="experience"') < populated.indexOf('<section id="education"'));
+  assert.match(populated, /Example contribution/);
+  data.experience.forEach(item => { item.visible = false; });
+  data.training.forEach(item => { item.visible = false; });
+  assert.doesNotMatch(render(data), /id="experience"|href="#experience"|id="training"|href="#training"/);
 });

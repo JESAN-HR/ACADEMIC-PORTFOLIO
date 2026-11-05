@@ -8,6 +8,8 @@ Your content is now organized into separate files. Each file reads like a form: 
 | --- | --- |
 | Name, photo, introduction, biography | `profile.js` |
 | Add a degree or school | `education.js` |
+| Add an RA role, internship, job or teaching appointment | `experience.js` |
+| Add courses, bootcamps or workshops attended | `training.js` |
 | Add an award or scholarship | `achievements.js` |
 | Add a project | `projects.js` |
 | Add a research paper | `publications.js` |
@@ -133,3 +135,13 @@ Add each real paper in `publications.js` with its actual authors and status. The
 ## Download CV button
 
 Your CV belongs at **cv/JESAN.pdf** in the project root. Overwrite that file with your latest PDF and rebuild. The build checks that it is a PDF, includes it in `dist/cv/JESAN.pdf`, and enables Download CV beside View publications. It works with GitHub Pages repository paths. If the file is missing, a disabled button and availability note appear instead of a broken link. No duplicate CV link in `socialLinks.js` is needed. The `cvUrl` field in `profile.js` is the source for this button.
+
+## Experience versus training
+
+`experience.js` is for actual research assistantships, internships, employment, and teaching appointments. The section appears **after Current Research and before Education**, including its navigation link, as soon as you add a visible entry. It stays hidden when empty, so the public site does not show empty career claims.
+
+Copy the commented template into the list. Fill in your exact title, organization, dates, and responsibilities. Optional fields include location, supervisor, contribution bullets (`highlights`), organization URL, and a proof link. Set `visible` to `true`, then rebuild. Do not describe planned roles as appointments or add invented duties/results.
+
+`training.js` is for your participation as a learner. Your Advanced ML & DL Bootcamp entry is labeled Student Participant, with SM Shaqib as instructor, based on your statement. Your supplied attendance dates are Sep 2024 – May 2025. The medical-data-analysis training at Health Informatics Research Lab, DIU is listed as Fall 2026 and ongoing. No completion certificate or completed outcome is assumed for the ongoing training. Add a certificate URL only if you have one. Training appears near Skills, separately from professional Experience.
+
+`experience.js` now contains two hidden XX examples with `20XX – 20XX` dates. Replace all placeholder text with your real details and set `visible: true` when ready. Copy either complete object to add a third, fourth, or any further role; use a unique `id` and adjust `displayOrder`.
