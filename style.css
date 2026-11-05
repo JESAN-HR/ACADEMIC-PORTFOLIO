@@ -91,6 +91,7 @@ main { max-width: var(--max-width); padding: 0 28px; margin: auto; }
 .timeline-content::before { content: ''; position: absolute; width: 7px; height: 7px; border-radius: 50%; background: var(--color-sage); left: -4px; top: 10px; }
 .timeline-content h3 { font-size: 18px; line-height: 1.5; margin-bottom: 7px; }
 .timeline-content p { font-size: 15px; margin-bottom: 9px; }
+#experience .timeline-content ul { font: 400 15px/1.7 var(--font-sans); margin-block: 9px; }
 .timeline-content .org { color: var(--color-text-muted); }
 .status { font-size: 12px !important; color: var(--color-accent); font-weight: 600; }
 /* Research interests expand using native keyboard-accessible disclosures. */
